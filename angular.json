@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-commands"
+    }
+  },
+  "defaultProject": "ng-commands",
+  "cli": {
+    "analytics": "4a8b700c-0766-45fa-a94d-6518bdcff2e5"
+  }
 }

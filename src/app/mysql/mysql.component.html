@@ -1,0 +1,63 @@
+<input type="hidden" #selection>
+
+<div class="card-container">
+  <div class="card card-small" (click)="selection.value = 'login'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+    <span>Login</span>
+  </div>
+
+  <div class="card card-small" (click)="selection.value = 'createdb'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+    <span>Create Database</span>
+  </div>
+
+  <div class="card card-small" (click)="selection.value = 'showdb'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+    <span>Show Database</span>
+  </div>
+
+  <div class="card card-small" (click)="selection.value = 'usedb'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+    <span>Use Database</span>
+  </div>
+
+  <div class="card card-small" (click)="selection.value = 'showtable'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+    <span>Show Tables</span>
+  </div>
+
+  <div class="card card-small" (click)="selection.value = 'describe'" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+    <span>Describe Table</span>
+  </div>
+</div>
+
+<!-- Terminal -->
+<div class="card-container">
+    <div class="terminal" [ngSwitch]="selection.value">
+        <pre *ngSwitchDefault>mysql -u root -p</pre>
+        <pre *ngSwitchCase="'createdb'">create database [databasename];</pre>
+        <pre *ngSwitchCase="'showdb'">show databases;</pre>
+        <pre *ngSwitchCase="'usedb'">use [db name];</pre>
+        <pre *ngSwitchCase="'showtable'">show tables; </pre>
+        <pre *ngSwitchCase="'describe'">describe [table name];</pre>
+      </div>
+
+</div>
+
+<div class="card-container">
+    <a class="card" rel="noopener" href="#">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+
+      <span>Download PDF Version</span>
+
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+    </a>
+
+</div>
